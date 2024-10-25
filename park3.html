@@ -1,0 +1,495 @@
+<html>
+  <head>
+    <title>Advanced Markers with HTML</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v6.2.0/js/all.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"></link>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+	.nav-link{
+	padding-left: 20px !important;
+	padding-right: 20px !important;
+	}
+        .map-container {
+            flex: 1;
+            height: 600px;
+            width: 100%;
+            background-color: #e0e0e0; /* Placeholder for the map */
+            position: relative;
+        }
+        .filter-container {
+            padding: 20px;
+            text-align: center;
+        }
+        .filter-container select {
+            margin: 10px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+:root {
+  --building-color: #FF9800;
+  --house-color: #0288D1;
+  --shop-color: #7B1FA2;
+  --warehouse-color: #558B2F;
+}
+
+/*
+ * Optional: Makes the sample page fill the window.
+ */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Always set the map height explicitly to define the size of the div element
+ * that contains the map.
+ */
+#map {
+  height: 100%;
+  width: 100%;
+}
+
+/*
+ * Property styles in unhighlighted state.
+ */
+.property {
+  align-items: center;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  color: #263238;
+  display: flex;
+  font-size: 14px;
+  gap: 15px;
+  height: 30px;
+  justify-content: center;
+  padding: 4px;
+  position: relative;
+  position: relative;
+  transition: all 0.3s ease-out;
+  width: 30px;
+}
+
+.property::after {
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 9px solid #FFFFFF;
+  content: "";
+  height: 0;
+  left: 50%;
+  position: absolute;
+  top: 95%;
+  transform: translate(-50%, 0);
+  transition: all 0.3s ease-out;
+  width: 0;
+  z-index: 1;
+}
+
+.property .icon {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  color: #FFFFFF;
+}
+
+.property .icon svg {
+  height: 20px;
+  width: auto;
+}
+
+.property .details {
+  display: none;
+  flex-direction: column;
+  flex: 1;
+}
+
+.property .address {
+  color: #9E9E9E;
+  font-size: 10px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
+.property .features {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.property .features > div {
+  align-items: center;
+  background: #F5F5F5;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  display: flex;
+  font-size: 10px;
+  gap: 5px;
+  padding: 5px;
+}
+
+/*
+ * Property styles in highlighted state.
+ */
+.property.highlight {
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
+  height: 140px;
+  padding: 8px 15px;
+  width: auto;
+}
+
+.property.highlight::after {
+  border-top: 9px solid #FFFFFF;
+}
+
+.property.highlight .details {
+  display: flex;
+}
+
+.property.highlight .icon svg {
+  width: 50px;
+  height: 50px;
+}
+
+.property .bed {
+  color: #FFA000;
+}
+
+.property .bath {
+  color: #03A9F4;
+}
+
+.property .size {
+  color: #388E3C;
+}
+
+/*
+ * House icon colors.
+ */
+.property.highlight:has(.fa-house) .icon {
+  color: var(--house-color);
+}
+
+.property:not(.highlight):has(.fa-house) {
+  background-color: var(--house-color);
+}
+
+.property:not(.highlight):has(.fa-house)::after {
+  border-top: 9px solid var(--house-color);
+}
+
+/*
+ * Building icon colors.
+ */
+.property.highlight:has(.fa-building) .icon {
+  color: var(--building-color);
+}
+
+.property:not(.highlight):has(.fa-building) {
+  background-color: var(--building-color);
+}
+
+.property:not(.highlight):has(.fa-building)::after {
+  border-top: 9px solid var(--building-color);
+}
+
+/*
+ * Warehouse icon colors.
+ */
+.property.highlight:has(.fa-warehouse) .icon {
+  color: var(--warehouse-color);
+}
+
+.property:not(.highlight):has(.fa-warehouse) {
+  background-color: var(--warehouse-color);
+}
+
+.property:not(.highlight):has(.fa-warehouse)::after {
+  border-top: 9px solid var(--warehouse-color);
+}
+
+/*
+ * Shop icon colors.
+ */
+.property.highlight:has(.fa-shop) .icon {
+  color: var(--shop-color);
+}
+
+.property:not(.highlight):has(.fa-shop) {
+  background-color: var(--shop-color);
+}
+
+.property:not(.highlight):has(.fa-shop)::after {
+  border-top: 9px solid var(--shop-color);
+}
+</style>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&key=AIzaSyCM9Qiu9zFFHXTFQoqHD5C-StI-9JJKvAo"></script>
+  </head>
+  <body>
+<header style='background-image:url("back.jpg");background-size: cover;background-repeat:no-repeat;height:200px;'> 
+    <h1 style='margin:0;'>Welcome to Rental Home Selector</h1>
+</header>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Grand Park Rentals</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Select a rental</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Entertainment</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact Us</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+    <h2 style="text-align: center; padding: 20px;">Map of Rentals Near Westfield, Indiana</h2>
+
+<div class="row filter-container">
+	<div class="col-xs-12 col-sm-3">
+		<label for="bedrooms">Bedrooms:</label>
+		<select id="bedrooms" class="form-control">
+		    <option value="studio">Studio</option>
+		    <option value="1">1</option>
+		    <option value="2">2</option>
+		    <option value="3">3</option>
+		    <option value="4">4</option>
+		    <option value="5+">5+</option>
+		</select>
+	</div>
+	<div class="col-xs-12 col-sm-3">
+		<label for="bathrooms">Bathrooms:</label>
+		<select id="bathrooms" class="form-control">
+		    <option value="0">0</option>
+		    <option value="1">1</option>
+		    <option value="2+">2+</option>
+		</select>
+	</div>
+	<div class="col-xs-12 col-sm-3">
+		<label for="type">Type:</label>
+		<select id="type" class="form-control">
+		    <option value="hotel">Hotel</option>
+		    <option value="room-only">Room Only</option>
+		    <option value="entire-house">Entire House</option>
+		</select>
+	</div>
+	<div class="col-xs-12 col-sm-3">
+		<label for="radius">Radius (miles):</label>
+		<select id="radius" class="form-control">
+		    <option value="2">2</option>
+		    <option value="5">5</option>
+		    <option value="10">10</option>
+		    <option value="20">20</option>
+		    <option value="30">30</option>
+		    <option value="50+">50+</option>
+		</select>
+	</div>
+</div>
+
+    <div id="map"></div>
+
+    <!-- prettier-ignore -->
+    <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+        ({key: "AIzaSyCM9Qiu9zFFHXTFQoqHD5C-StI-9JJKvAo", v: "weekly"});</script>
+<script>
+async function initMap() {
+  // Request needed libraries.
+  const { Map } = await google.maps.importLibrary("maps");
+  const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+  const center = { lat: 40.06097412109375, lng: -86.15179443359375 };
+  const map = new Map(document.getElementById("map"), {
+    zoom: 13,
+    center,
+    mapId: "4504f8b37365c3d0",
+  });
+
+  for (const property of properties) {
+    const AdvancedMarkerElement = new google.maps.marker.AdvancedMarkerElement({
+      map,
+      content: buildContent(property),
+      position: property.position,
+      title: property.description,
+    });
+
+    AdvancedMarkerElement.addListener("click", () => {
+      toggleHighlight(AdvancedMarkerElement, property);
+    });
+  }
+}
+
+function toggleHighlight(markerView, property) {
+  if (markerView.content.classList.contains("highlight")) {
+    markerView.content.classList.remove("highlight");
+    markerView.zIndex = null;
+  } else {
+    markerView.content.classList.add("highlight");
+    markerView.zIndex = 1;
+  }
+}
+
+function buildContent(property) {
+  const content = document.createElement("div");
+
+  content.classList.add("property");
+  content.innerHTML = `
+    <div class="icon">
+        <i aria-hidden="true" class="fa fa-icon fa-${property.type}" title="${property.type}"></i>
+        <span class="fa-sr-only">${property.type}</span>
+    </div>
+    <div class="details">
+        <div class="price">${property.price}</div>
+        <div class="address">${property.address}</div>
+        <div class="features">
+        <div>
+            <i aria-hidden="true" class="fa fa-bed fa-lg bed" title="bedroom"></i>
+            <span class="fa-sr-only">bedroom</span>
+            <span>${property.bed}</span>
+        </div>
+        <div>
+            <i aria-hidden="true" class="fa fa-bath fa-lg bath" title="bathroom"></i>
+            <span class="fa-sr-only">bathroom</span>
+            <span>${property.bath}</span>
+        </div>
+        <div>
+            <i aria-hidden="true" class="fa fa-ruler fa-lg size" title="size"></i>
+            <span class="fa-sr-only">size</span>
+            <span>${property.size} ft<sup>2</sup></span>
+        </div>
+        </div>`;
+
+    if(property.type == "Building"){
+	content.innerHTML += '<div><br/><button class="btn btn-primary" onclick="Booked();">Book</button></div>';
+    }
+
+    content.innerHTML += '</div>';
+  return content;
+}
+
+const properties = [
+  {
+    address: "Grand Park",
+    description: "Grand Park",
+    price: "Grand Park",
+    type: "building",
+    bed: 0,
+    bath: 0,
+    size: 300,
+    position: {
+      lat: 40.06097412109375,
+      lng: -86.15179443359375,
+    },
+  },
+  {
+    address: "108 Squirrel Ln, Westfield, IN",
+    description: "House",
+    price: "$120",
+    type: "home",
+    bed: 4,
+    bath: 3,
+    size: 2000,
+    position: {
+      lat: 40.06,
+      lng: -86.2,
+    },
+  },
+  {
+    address: "100 Chris St, Westfield, IN",
+    description: "Spacious house great for everyone",
+    price: "$125",
+    type: "home",
+    bed: 4,
+    bath: 4,
+    size: 800,
+    position: {
+      lat: 40.07,
+      lng: -86.15,
+    },
+  },
+  {
+    address: "98 Aleh Ave, Westfield, IN",
+    description: "A lovely house on busy road",
+    price: "$400",
+    type: "home",
+    bed: 2,
+    bath: 1,
+    size: 2100,
+    position: {
+      lat: 40.05,
+      lng: -86.15,
+    },
+  },
+  {
+    address: "2117 Su St, Westfield, IN",
+    description: "Single family house near golf club",
+    price: "$170",
+    type: "home",
+    bed: 4,
+    bath: 3,
+    size: 2000,
+    position: {
+      lat: 40.05,
+      lng: -86.1,
+    },
+  },
+  {
+    address: "197 Alicia Dr, Westfield, IN",
+    description: "Multifloor large house",
+    price: "$500",
+    type: "home",
+    bed: 5,
+    bath: 4,
+    size: 1700,
+    position: {
+      lat: 40.07,
+      lng: -86.1,
+    },
+  },
+];
+
+initMap();
+
+function Booked(){
+	toastr.success("Booked!");
+}
+</script>
+  </body>
+</html>
