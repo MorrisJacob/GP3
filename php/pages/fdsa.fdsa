@@ -1,0 +1,30 @@
+ params, body_params = _add_weather_source(params, body_params)
+
+    log.debug("body params: {}".format(body_params))
+
+    url = ''.join([
+        settings.INSIGHTS_SITE_URL,
+        '/insights_api_internal/',
+        command
+    ])
+
+    res = requests.request(
+        method=method,
+        url=url,
+        params=params,
+        json=body_params,
+        auth=get_auth(),
+        verify=settings.INSIGHTS_VERIFY_REQUESTS,
+    )
+
+    if res.status_code / 100 == 2:
+        if parse_content:
+            return res.json()
+        else:
+            return res
+    else:
+        log.error("Insights error {} from '{}': '{}'".format(
+            res.status_code, url, res.content[:1024]
+        ))
+        raise InsightsError(content=res.content, status_code=res.status_code)
+

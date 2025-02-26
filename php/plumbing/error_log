@@ -1,0 +1,173 @@
+[05-Feb-2025 09:04:50 America/Boise] PHP Warning:  Undefined array key "UserID" in /home2/zqgogtmy/public_html/new-site/php/master/header.php on line 2
+[05-Feb-2025 09:04:50 America/Boise] PHP Warning:  Undefined array key "itineraryTimes" in /home2/zqgogtmy/public_html/new-site/php/plumbing/generalfunctions.php on line 123
+[05-Feb-2025 09:04:50 America/Boise] PHP Warning:  foreach() argument must be of type array|object, null given in /home2/zqgogtmy/public_html/new-site/php/pages/itinerary.php on line 38
+[05-Feb-2025 09:05:36 America/Boise] PHP Warning:  Undefined array key "UserID" in /home2/zqgogtmy/public_html/new-site/php/master/header.php on line 2
+[05-Feb-2025 09:05:36 America/Boise] PHP Warning:  Undefined variable $activity_rows in /home2/zqgogtmy/public_html/new-site/itinerary.php on line 67
+[05-Feb-2025 09:05:36 America/Boise] PHP Warning:  Undefined array key "UserID" in /home2/zqgogtmy/public_html/new-site/php/master/header.php on line 2
+[05-Feb-2025 09:05:39 America/Boise] PHP Warning:  Undefined array key "UserID" in /home2/zqgogtmy/public_html/new-site/php/master/header.php on line 2
+[05-Feb-2025 09:05:44 America/Boise] PHP Warning:  Undefined array key "UserID" in /home2/zqgogtmy/public_html/new-site/php/master/header.php on line 2
+[05-Feb-2025 09:06:02 America/Boise] PHP Warning:  Attempt to read property "num_rows" on true in /home2/zqgogtmy/public_html/new-site/php/plumbing/sqlconn.php on line 18
+[05-Feb-2025 09:06:02 America/Boise] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', 'lodging', '2025-01-23T16:00')' at line 1 in /home2/zqgogtmy/public_html/new-site/php/plumbing/sqlconn.php:14
+Stack trace:
+#0 /home2/zqgogtmy/public_html/new-site/php/plumbing/sqlconn.php(14): mysqli->query('INSERT INTO Tri...')
+#1 /home2/zqgogtmy/public_html/new-site/php/plumbing/generalfunctions.php(162): ExecuteSQL('INSERT INTO Tri...')
+#2 /home2/zqgogtmy/public_html/new-site/php/pages/itinerary.php(21): CreateItinerary('4', Array, Array, Array, 'lodging')
+#3 /home2/zqgogtmy/public_html/new-site/itinerary.php(3): include('/home2/zqgogtmy...')
+#4 {main}
+  thrown in /home2/zqgogtmy/public_html/new-site/php/plumbing/sqlconn.php on line 14
+[05-Feb-2025 10:56:25 America/Boise] PHP Warning:  Undefined array key "UserID" in /home2/zqgogtmy/public_html/new-site/php/master/header.php on line 2
+[05-Feb-2025 10:56:38 America/Boise] PHP Warning:  Undefined array key "UserID" in /home2/zqgogtmy/public_html/new-site/php/master/header.php on line 2
+[05-Feb-2025 10:56:38 America/Boise] PHP Warning:  Undefined variable $activity_rows in /home2/zqgogtmy/public_html/new-site/itinerary.php on line 67
+[05-Feb-2025 10:56:38 America/Boise] PHP Warning:  Undefined array key "UserID" in /home2/zqgogtmy/public_html/new-site/php/master/header.php on line 2
+[05-Feb-2025 10:56:40 America/Boise] PHP Warning:  Undefined array key "UserID" in /home2/zqgogtmy/public_html/new-site/php/master/header.php on line 2
+[05-Feb-2025 10:56:44 America/Boise] PHP Warning:  Undefined array key "UserID" in /home2/zqgogtmy/public_html/new-site/php/master/header.php on line 2
+[05-Feb-2025 10:56:48 America/Boise] PHP Warning:  foreach() argument must be of type array|object, null given in /home2/zqgogtmy/public_html/new-site/php/pages/itinerary.php on line 38
+[05-Feb-2025 10:56:55 America/Boise] PHP Warning:  Attempt to read property "num_rows" on true in /home2/zqgogtmy/public_html/new-site/php/plumbing/sqlconn.php on line 18
+[05-Feb-2025 10:56:55 America/Boise] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', 'lodging', '2025-02-05T12:56')' at line 1 in /home2/zqgogtmy/public_html/new-site/php/plumbing/sqlconn.php:14
+Stack trace:
+#0 /home2/zqgogtmy/public_html/new-site/php/plumbing/sqlconn.php(14): mysqli->query('INSERT INTO Tri...')
+#1 /home2/zqgogtmy/public_html/new-site/php/plumbing/generalfunctions.php(162): ExecuteSQL('INSERT INTO Tri...')
+#2 /home2/zqgogtmy/public_html/new-site/php/pages/itinerary.php(21): CreateItinerary('4', Array, Array, Array, 'lodging')
+#3 /home2/zqgogtmy/public_html/new-site/itinerary.php(3): include('/home2/zqgogtmy...')
+#4 {main}
+  thrown in /home2/zqgogtmy/public_html/new-site/php/plumbing/sqlconn.php on line 14
+[05-Feb-2025 11:26:18 America/Boise] PHP Warning:  foreach() argument must be of type array|object, null given in /home2/zqgogtmy/public_html/new-site/php/pages/itinerary.php on line 38
+[05-Feb-2025 11:26:25 America/Boise] PHP Warning:  Attempt to read property "num_rows" on true in /home2/zqgogtmy/public_html/new-site/php/plumbing/sqlconn.php on line 18
+[05-Feb-2025 11:26:25 America/Boise] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', 'lodging', '2025-02-05T13:26')' at line 1 in /home2/zqgogtmy/public_html/new-site/php/plumbing/sqlconn.php:14
+Stack trace:
+#0 /home2/zqgogtmy/public_html/new-site/php/plumbing/sqlconn.php(14): mysqli->query('INSERT INTO Tri...')
+#1 /home2/zqgogtmy/public_html/new-site/php/plumbing/generalfunctions.php(162): ExecuteSQL('INSERT INTO Tri...')
+#2 /home2/zqgogtmy/public_html/new-site/php/pages/itinerary.php(21): CreateItinerary('4', Array, Array, Array, 'lodging')
+#3 /home2/zqgogtmy/public_html/new-site/itinerary.php(3): include('/home2/zqgogtmy...')
+#4 {main}
+  thrown in /home2/zqgogtmy/public_html/new-site/php/plumbing/sqlconn.php on line 14
+[05-Feb-2025 11:36:46 America/Boise] PHP Warning:  foreach() argument must be of type array|object, null given in /home2/zqgogtmy/public_html/new-site/php/pages/itinerary.php on line 38
+[05-Feb-2025 11:36:56 America/Boise] PHP Warning:  Attempt to read property "num_rows" on true in /home2/zqgogtmy/public_html/new-site/php/plumbing/sqlconn.php on line 18
+[05-Feb-2025 11:36:56 America/Boise] PHP Fatal error:  Uncaught Error: Call to undefined function replace() in /home2/zqgogtmy/public_html/new-site/php/plumbing/generalfunctions.php:145
+Stack trace:
+#0 /home2/zqgogtmy/public_html/new-site/php/pages/itinerary.php(21): CreateItinerary('4', Array, Array, Array, 'lodging')
+#1 /home2/zqgogtmy/public_html/new-site/itinerary.php(3): include('/home2/zqgogtmy...')
+#2 {main}
+  thrown in /home2/zqgogtmy/public_html/new-site/php/plumbing/generalfunctions.php on line 145
+[05-Feb-2025 11:38:49 America/Boise] PHP Warning:  foreach() argument must be of type array|object, null given in /home2/zqgogtmy/public_html/new-site/php/pages/itinerary.php on line 38
+[05-Feb-2025 11:38:55 America/Boise] PHP Warning:  Attempt to read property "num_rows" on true in /home2/zqgogtmy/public_html/new-site/php/plumbing/sqlconn.php on line 18
+[05-Feb-2025 11:38:55 America/Boise] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', '\'', '2025-02-06T13:38')' at line 1 in /home2/zqgogtmy/public_html/new-site/php/plumbing/sqlconn.php:14
+Stack trace:
+#0 /home2/zqgogtmy/public_html/new-site/php/plumbing/sqlconn.php(14): mysqli->query('INSERT INTO Tri...')
+#1 /home2/zqgogtmy/public_html/new-site/php/plumbing/generalfunctions.php(164): ExecuteSQL('INSERT INTO Tri...')
+#2 /home2/zqgogtmy/public_html/new-site/php/pages/itinerary.php(21): CreateItinerary('4', Array, Array, Array, '\\'')
+#3 /home2/zqgogtmy/public_html/new-site/itinerary.php(3): include('/home2/zqgogtmy...')
+#4 {main}
+  thrown in /home2/zqgogtmy/public_html/new-site/php/plumbing/sqlconn.php on line 14
+[05-Feb-2025 11:40:23 America/Boise] PHP Warning:  foreach() argument must be of type array|object, null given in /home2/zqgogtmy/public_html/new-site/php/pages/itinerary.php on line 38
+[05-Feb-2025 11:40:30 America/Boise] PHP Warning:  Attempt to read property "num_rows" on true in /home2/zqgogtmy/public_html/new-site/php/plumbing/sqlconn.php on line 18
+[05-Feb-2025 11:40:30 America/Boise] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', '''', '2025-02-06T13:40')' at line 1 in /home2/zqgogtmy/public_html/new-site/php/plumbing/sqlconn.php:14
+Stack trace:
+#0 /home2/zqgogtmy/public_html/new-site/php/plumbing/sqlconn.php(14): mysqli->query('INSERT INTO Tri...')
+#1 /home2/zqgogtmy/public_html/new-site/php/plumbing/generalfunctions.php(164): ExecuteSQL('INSERT INTO Tri...')
+#2 /home2/zqgogtmy/public_html/new-site/php/pages/itinerary.php(21): CreateItinerary('4', Array, Array, Array, '''')
+#3 /home2/zqgogtmy/public_html/new-site/itinerary.php(3): include('/home2/zqgogtmy...')
+#4 {main}
+  thrown in /home2/zqgogtmy/public_html/new-site/php/plumbing/sqlconn.php on line 14
+[05-Feb-2025 11:42:22 America/Boise] PHP Warning:  foreach() argument must be of type array|object, null given in /home2/zqgogtmy/public_html/new-site/php/pages/itinerary.php on line 38
+[05-Feb-2025 11:42:39 America/Boise] PHP Warning:  Attempt to read property "num_rows" on true in /home2/zqgogtmy/public_html/new-site/php/plumbing/sqlconn.php on line 18
+[05-Feb-2025 11:42:39 America/Boise] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', '''', '2025-02-05T13:42')' at line 1 in /home2/zqgogtmy/public_html/new-site/php/plumbing/sqlconn.php:14
+Stack trace:
+#0 /home2/zqgogtmy/public_html/new-site/php/plumbing/sqlconn.php(14): mysqli->query('INSERT INTO Tri...')
+#1 /home2/zqgogtmy/public_html/new-site/php/plumbing/generalfunctions.php(165): ExecuteSQL('INSERT INTO Tri...')
+#2 /home2/zqgogtmy/public_html/new-site/php/pages/itinerary.php(21): CreateItinerary('4', Array, Array, Array, '''')
+#3 /home2/zqgogtmy/public_html/new-site/itinerary.php(3): include('/home2/zqgogtmy...')
+#4 {main}
+  thrown in /home2/zqgogtmy/public_html/new-site/php/plumbing/sqlconn.php on line 14
+[05-Feb-2025 11:42:50 America/Boise] PHP Warning:  foreach() argument must be of type array|object, null given in /home2/zqgogtmy/public_html/new-site/php/pages/itinerary.php on line 38
+[05-Feb-2025 11:44:15 America/Boise] PHP Warning:  foreach() argument must be of type array|object, null given in /home2/zqgogtmy/public_html/new-site/php/pages/itinerary.php on line 38
+[05-Feb-2025 11:44:22 America/Boise] PHP Warning:  Attempt to read property "num_rows" on true in /home2/zqgogtmy/public_html/new-site/php/plumbing/sqlconn.php on line 18
+[05-Feb-2025 11:44:22 America/Boise] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', '''', '2025-02-05T13:44')' at line 1 in /home2/zqgogtmy/public_html/new-site/php/plumbing/sqlconn.php:14
+Stack trace:
+#0 /home2/zqgogtmy/public_html/new-site/php/plumbing/sqlconn.php(14): mysqli->query('INSERT INTO Tri...')
+#1 /home2/zqgogtmy/public_html/new-site/php/plumbing/generalfunctions.php(165): ExecuteSQL('INSERT INTO Tri...')
+#2 /home2/zqgogtmy/public_html/new-site/php/pages/itinerary.php(21): CreateItinerary('4', Array, Array, Array, '''')
+#3 /home2/zqgogtmy/public_html/new-site/itinerary.php(3): include('/home2/zqgogtmy...')
+#4 {main}
+  thrown in /home2/zqgogtmy/public_html/new-site/php/plumbing/sqlconn.php on line 14
+[05-Feb-2025 11:44:30 America/Boise] PHP Warning:  foreach() argument must be of type array|object, null given in /home2/zqgogtmy/public_html/new-site/php/pages/itinerary.php on line 38
+[05-Feb-2025 11:46:13 America/Boise] PHP Warning:  foreach() argument must be of type array|object, null given in /home2/zqgogtmy/public_html/new-site/php/pages/itinerary.php on line 40
+[05-Feb-2025 11:46:20 America/Boise] PHP Warning:  Attempt to read property "num_rows" on true in /home2/zqgogtmy/public_html/new-site/php/plumbing/sqlconn.php on line 18
+[05-Feb-2025 11:46:20 America/Boise] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', '''', '2025-02-05T13:46')' at line 1 in /home2/zqgogtmy/public_html/new-site/php/plumbing/sqlconn.php:14
+Stack trace:
+#0 /home2/zqgogtmy/public_html/new-site/php/plumbing/sqlconn.php(14): mysqli->query('INSERT INTO Tri...')
+#1 /home2/zqgogtmy/public_html/new-site/php/plumbing/generalfunctions.php(165): ExecuteSQL('INSERT INTO Tri...')
+#2 /home2/zqgogtmy/public_html/new-site/php/pages/itinerary.php(23): CreateItinerary('4', Array, Array, Array, '''')
+#3 /home2/zqgogtmy/public_html/new-site/itinerary.php(3): include('/home2/zqgogtmy...')
+#4 {main}
+  thrown in /home2/zqgogtmy/public_html/new-site/php/plumbing/sqlconn.php on line 14
+[05-Feb-2025 11:48:05 America/Boise] PHP Warning:  foreach() argument must be of type array|object, null given in /home2/zqgogtmy/public_html/new-site/php/pages/itinerary.php on line 38
+[05-Feb-2025 11:48:12 America/Boise] PHP Warning:  Attempt to read property "num_rows" on true in /home2/zqgogtmy/public_html/new-site/php/plumbing/sqlconn.php on line 18
+[05-Feb-2025 11:48:12 America/Boise] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', 'lodging', '2025-02-05T13:48')' at line 1 in /home2/zqgogtmy/public_html/new-site/php/plumbing/sqlconn.php:14
+Stack trace:
+#0 /home2/zqgogtmy/public_html/new-site/php/plumbing/sqlconn.php(14): mysqli->query('INSERT INTO Tri...')
+#1 /home2/zqgogtmy/public_html/new-site/php/plumbing/generalfunctions.php(165): ExecuteSQL('INSERT INTO Tri...')
+#2 /home2/zqgogtmy/public_html/new-site/php/pages/itinerary.php(21): CreateItinerary('4', Array, Array, Array, 'lodging')
+#3 /home2/zqgogtmy/public_html/new-site/itinerary.php(3): include('/home2/zqgogtmy...')
+#4 {main}
+  thrown in /home2/zqgogtmy/public_html/new-site/php/plumbing/sqlconn.php on line 14
+[05-Feb-2025 11:49:06 America/Boise] PHP Warning:  foreach() argument must be of type array|object, null given in /home2/zqgogtmy/public_html/new-site/php/pages/itinerary.php on line 38
+[05-Feb-2025 11:49:13 America/Boise] PHP Warning:  Attempt to read property "num_rows" on true in /home2/zqgogtmy/public_html/new-site/php/plumbing/sqlconn.php on line 18
+[05-Feb-2025 11:49:13 America/Boise] PHP Warning:  Attempt to read property "num_rows" on true in /home2/zqgogtmy/public_html/new-site/php/plumbing/sqlconn.php on line 18
+[05-Feb-2025 11:49:13 America/Boise] PHP Warning:  Undefined variable $activity_rows in /home2/zqgogtmy/public_html/new-site/itinerary.php on line 67
+[05-Feb-2025 11:55:16 America/Boise] PHP Warning:  Attempt to read property "num_rows" on true in /home2/zqgogtmy/public_html/new-site/php/plumbing/sqlconn.php on line 18
+[05-Feb-2025 11:55:16 America/Boise] PHP Warning:  Attempt to read property "num_rows" on true in /home2/zqgogtmy/public_html/new-site/php/plumbing/sqlconn.php on line 18
+[05-Feb-2025 11:55:16 America/Boise] PHP Warning:  Attempt to read property "num_rows" on true in /home2/zqgogtmy/public_html/new-site/php/plumbing/sqlconn.php on line 18
+[05-Feb-2025 11:55:16 America/Boise] PHP Warning:  Undefined variable $activity_rows in /home2/zqgogtmy/public_html/new-site/itinerary.php on line 67
+[05-Feb-2025 11:55:41 America/Boise] PHP Warning:  Undefined array key "UserID" in /home2/zqgogtmy/public_html/new-site/php/master/header.php on line 2
+[05-Feb-2025 11:55:49 America/Boise] PHP Warning:  Undefined array key "UserID" in /home2/zqgogtmy/public_html/new-site/php/master/header.php on line 2
+[05-Feb-2025 11:55:49 America/Boise] PHP Warning:  Undefined variable $activity_rows in /home2/zqgogtmy/public_html/new-site/itinerary.php on line 67
+[05-Feb-2025 11:55:49 America/Boise] PHP Warning:  Undefined array key "UserID" in /home2/zqgogtmy/public_html/new-site/php/master/header.php on line 2
+[05-Feb-2025 11:55:50 America/Boise] PHP Warning:  Undefined array key "UserID" in /home2/zqgogtmy/public_html/new-site/php/master/header.php on line 2
+[05-Feb-2025 11:55:52 America/Boise] PHP Warning:  Undefined array key "UserID" in /home2/zqgogtmy/public_html/new-site/php/master/header.php on line 2
+[05-Feb-2025 11:55:54 America/Boise] PHP Warning:  Undefined array key "UserID" in /home2/zqgogtmy/public_html/new-site/php/master/header.php on line 2
+[05-Feb-2025 11:55:59 America/Boise] PHP Warning:  Undefined array key "UserID" in /home2/zqgogtmy/public_html/new-site/php/master/header.php on line 2
+[05-Feb-2025 11:55:59 America/Boise] PHP Warning:  Undefined variable $gametime_rows in /home2/zqgogtmy/public_html/new-site/trip.php on line 28
+[05-Feb-2025 11:55:59 America/Boise] PHP Warning:  Undefined array key "UserID" in /home2/zqgogtmy/public_html/new-site/php/master/header.php on line 2
+[05-Feb-2025 11:56:00 America/Boise] PHP Warning:  Undefined array key "UserID" in /home2/zqgogtmy/public_html/new-site/php/master/header.php on line 2
+[05-Feb-2025 11:56:02 America/Boise] PHP Warning:  Undefined array key "UserID" in /home2/zqgogtmy/public_html/new-site/php/master/header.php on line 2
+[05-Feb-2025 11:56:02 America/Boise] PHP Warning:  Undefined variable $gametime_rows in /home2/zqgogtmy/public_html/new-site/trip.php on line 28
+[05-Feb-2025 11:56:02 America/Boise] PHP Warning:  Undefined array key "UserID" in /home2/zqgogtmy/public_html/new-site/php/master/header.php on line 2
+[05-Feb-2025 11:56:03 America/Boise] PHP Warning:  Undefined array key "UserID" in /home2/zqgogtmy/public_html/new-site/php/master/header.php on line 2
+[05-Feb-2025 11:56:06 America/Boise] PHP Warning:  Undefined array key "UserID" in /home2/zqgogtmy/public_html/new-site/php/master/header.php on line 2
+[05-Feb-2025 11:56:06 America/Boise] PHP Warning:  Undefined variable $activity_rows in /home2/zqgogtmy/public_html/new-site/itinerary.php on line 67
+[05-Feb-2025 11:56:06 America/Boise] PHP Warning:  Undefined array key "UserID" in /home2/zqgogtmy/public_html/new-site/php/master/header.php on line 2
+[05-Feb-2025 11:56:08 America/Boise] PHP Warning:  Undefined array key "UserID" in /home2/zqgogtmy/public_html/new-site/php/master/header.php on line 2
+[05-Feb-2025 11:56:08 America/Boise] PHP Warning:  Undefined array key "UserID" in /home2/zqgogtmy/public_html/new-site/php/master/header.php on line 2
+[05-Feb-2025 11:56:16 America/Boise] PHP Warning:  Undefined array key "UserID" in /home2/zqgogtmy/public_html/new-site/php/master/header.php on line 2
+[05-Feb-2025 11:56:18 America/Boise] PHP Warning:  Undefined array key "UserID" in /home2/zqgogtmy/public_html/new-site/php/master/header.php on line 2
+[05-Feb-2025 11:56:19 America/Boise] PHP Warning:  Undefined array key "UserID" in /home2/zqgogtmy/public_html/new-site/php/master/header.php on line 2
+[05-Feb-2025 11:56:22 America/Boise] PHP Warning:  Undefined array key "UserID" in /home2/zqgogtmy/public_html/new-site/php/master/header.php on line 2
+[05-Feb-2025 11:56:22 America/Boise] PHP Warning:  Undefined array key "UserID" in /home2/zqgogtmy/public_html/new-site/php/master/header.php on line 2
+[05-Feb-2025 11:56:23 America/Boise] PHP Warning:  Undefined array key "UserID" in /home2/zqgogtmy/public_html/new-site/php/master/header.php on line 2
+[05-Feb-2025 12:01:35 America/Boise] PHP Fatal error:  Cannot redeclare GetActivities() (previously declared in /home2/zqgogtmy/public_html/new-site/php/plumbing/generalfunctions.php:116) in /home2/zqgogtmy/public_html/new-site/php/plumbing/generalfunctions.php on line 129
+[05-Feb-2025 12:01:37 America/Boise] PHP Fatal error:  Cannot redeclare GetActivities() (previously declared in /home2/zqgogtmy/public_html/new-site/php/plumbing/generalfunctions.php:116) in /home2/zqgogtmy/public_html/new-site/php/plumbing/generalfunctions.php on line 129
+[05-Feb-2025 12:02:44 America/Boise] PHP Warning:  Undefined array key "UserID" in /home2/zqgogtmy/public_html/new-site/php/master/header.php on line 2
+[05-Feb-2025 12:02:46 America/Boise] PHP Warning:  Undefined array key "UserID" in /home2/zqgogtmy/public_html/new-site/php/master/header.php on line 2
+[05-Feb-2025 12:02:46 America/Boise] PHP Warning:  Undefined array key "GameTime" in /home2/zqgogtmy/public_html/new-site/php/pages/cart.php on line 35
+[05-Feb-2025 12:02:46 America/Boise] PHP Warning:  Undefined array key "GateNumber" in /home2/zqgogtmy/public_html/new-site/php/pages/cart.php on line 38
+[05-Feb-2025 12:02:46 America/Boise] PHP Warning:  Undefined array key "FieldNumber" in /home2/zqgogtmy/public_html/new-site/php/pages/cart.php on line 41
+[05-Feb-2025 12:02:46 America/Boise] PHP Warning:  Undefined variable $trip_activities in /home2/zqgogtmy/public_html/new-site/php/pages/cart.php on line 51
+[05-Feb-2025 12:02:46 America/Boise] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given in /home2/zqgogtmy/public_html/new-site/php/pages/cart.php:51
+Stack trace:
+#0 /home2/zqgogtmy/public_html/new-site/cart.php(3): include()
+#1 {main}
+  thrown in /home2/zqgogtmy/public_html/new-site/php/pages/cart.php on line 51
+[05-Feb-2025 12:02:51 America/Boise] PHP Warning:  Undefined array key "UserID" in /home2/zqgogtmy/public_html/new-site/php/master/header.php on line 2
+[05-Feb-2025 12:02:55 America/Boise] PHP Warning:  Undefined array key "UserID" in /home2/zqgogtmy/public_html/new-site/php/master/header.php on line 2
+[05-Feb-2025 12:02:56 America/Boise] PHP Warning:  Undefined array key "UserID" in /home2/zqgogtmy/public_html/new-site/php/master/header.php on line 2
+[05-Feb-2025 12:02:58 America/Boise] PHP Warning:  Undefined array key "UserID" in /home2/zqgogtmy/public_html/new-site/php/master/header.php on line 2
+[05-Feb-2025 12:02:58 America/Boise] PHP Warning:  Undefined array key "GameTime" in /home2/zqgogtmy/public_html/new-site/php/pages/cart.php on line 35
+[05-Feb-2025 12:02:58 America/Boise] PHP Warning:  Undefined array key "GateNumber" in /home2/zqgogtmy/public_html/new-site/php/pages/cart.php on line 38
+[05-Feb-2025 12:02:58 America/Boise] PHP Warning:  Undefined array key "FieldNumber" in /home2/zqgogtmy/public_html/new-site/php/pages/cart.php on line 41
+[05-Feb-2025 12:02:58 America/Boise] PHP Warning:  Undefined variable $trip_activities in /home2/zqgogtmy/public_html/new-site/php/pages/cart.php on line 51
+[05-Feb-2025 12:02:58 America/Boise] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given in /home2/zqgogtmy/public_html/new-site/php/pages/cart.php:51
+Stack trace:
+#0 /home2/zqgogtmy/public_html/new-site/cart.php(3): include()
+#1 {main}
+  thrown in /home2/zqgogtmy/public_html/new-site/php/pages/cart.php on line 51
