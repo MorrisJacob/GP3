@@ -1,6 +1,16 @@
 <?php
-$userid = GetSafeString($_SESSION["UserID"]);
-$admin = GetSafeString($_SESSION["IsAdmin"]);
+if (isset($_SESSION['UserID'])){
+    $userid = $_SESSION['UserID'];
+} else {
+    $userid = "";
+}
+if (isset($_SESSION['IsAdmin'])){
+    $admin = $_SESSION['IsAdmin'];
+} else {
+    $admin = "";
+}
+$event = $_GET["event"];
+$city = GetCity($event);
 
 if($userid == ""){
     $userid = 0;

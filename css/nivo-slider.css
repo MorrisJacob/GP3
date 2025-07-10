@@ -30,7 +30,8 @@
 .nivo-main-image {
 	display: block !important;
 	position: relative !important;
-	width: 100% !important;
+	width: 60% !important;
+    margin: auto;
 }
 /* If an image is wrapped in a link */
 .nivoSlider a.nivo-imageLink {

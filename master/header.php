@@ -3,6 +3,7 @@ session_start();
 include('php/plumbing/sqlconn.php');
 include('php/plumbing/generalfunctions.php');
 include ('php/master/header.php');
+include ('php/plumbing/twilio.php');
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,9 +29,9 @@ include ('php/master/header.php');
     <script type="text/javascript">
     $(window).load(function() {
         $('#slider').nivoSlider({
-     prevText: '',
-           nextText: ''
-      });
+            prevText: '',
+            nextText: ''
+        });
         jQuery(".maxheight").equalHeights();
 
 	$('#icnLogin').on('click', function(e){
@@ -63,7 +64,9 @@ include ('php/master/header.php');
 	<div class="row">
     <?php if($admin == 1){ ?>
     <div class="span2" style="margin-top:20px;">
-        <a href="short-term-rentals.php"><input id="manageRentals" type='button' class="btn btn-info" value='Manage Short-Term Rentals' /></a>
+        <a href="short-term-rentals.php"><input id="manageRentals" type='button' class="btn btn-info" value='Manage Short-Term Rentals' /></a><br/>
+        <a href="activitylocations.php"><input id="manageLocations" type='button' class="btn btn-info" value='Manage Activity Locations' /></a>
+        <a href="trip-publish.php"><input id="tripPublish" type='button' class="btn btn-info" value='View Trip Publishes' /></a>
     </div>
     <?php } ?>
 	<div class="span2">
@@ -75,26 +78,23 @@ include ('php/master/header.php');
                 <span></span>
             </button>
  
-            <div class="collapse navbar-collapse" id="navbarNav">
-		<div class="navbar-item">
+            <div class="collapse navbar-collapse city-<?php echo $event; ?>" id="navbarNav">
+            <div class="navbar-item">
                         <a class="nav-link scroll-link" href="index.php">Home</a>
-		</div>
-		<div class="navbar-item">
-                        <a class="nav-link scroll-link" href="cart.php">My Carts</a>
-		</div>
-		<div class="navbar-item">
-                        <a class="nav-link scroll-link" href="cart-history.php">Cart History</a>
-		</div>
-		<div class="navbar-item">
-                        <a class="nav-link scroll-link" href="city-info.php">City Info</a>
-		</div>
-		<div class="navbar-item">
-                        <a class="nav-link scroll-link" href="my-account.php">My Account</a>
-		</div>
-		<div class="navbar-item">
-                        <a class="nav-link scroll-link" href="contact.php">Contact Us</a>
-		</div>
             </div>
+            <div class="navbar-item">
+                        <a class="nav-link scroll-link" href="city-info.php">City Info</a>
+            </div>
+            <div class="navbar-item">
+                        <a class="nav-link scroll-link" href="cart.php">My Carts</a>
+            </div>
+            <div class="navbar-item">
+                        <a class="nav-link scroll-link" href="my-account.php">My Account</a>
+            </div>
+            <div class="navbar-item">
+                        <a class="nav-link scroll-link" href="contact.php">Contact Us</a>
+            </div>
+        </div>
 	</div>
 	</div>
         </div>
@@ -102,12 +102,15 @@ include ('php/master/header.php');
  
     <!-- continues the page content ... -->
 <!- navbar end -->
-<header>
+<header style="padding-bottom:0;">
     <div class="container">
          <div class="navbar navbar_ clearfix">
             <div class="navbar-inner">
-                  <div class="clearfix" style="display:flex;">
-                        <h1 class="brand"><a href="index.php"><img src="img/logo.png" alt=""></a><span>Grand Park Rentals</span></h1>
+                  <div class="clearfix">
+                    <?php if(!isset($_GET['event'])) { ?>
+                        <h1 class="brand hidden-xs" style="float:left;z-index:30;position:absolute;left:10%;"><a href="index.php"><img src="img/logo.jpeg" alt="" style="border-radius:15px;"></a></h1>
+                        <h2 class="text-center">BOOK. SAVE. SHARE YOUR TRIP TODAY.</h2>
+                    <?php } ?>
 			<br/>
                   </div>
              </div>

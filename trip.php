@@ -1,13 +1,12 @@
 <?php include('master/header.php'); ?>
-<?php include('php/controls/cities.php'); ?>
 <?php include('php/pages/trip.php'); ?>
-<div class="row text-center">
+<div class="row text-center city-<?php echo $event; ?>">
     <div class="span12">
 	<h3>Manage Your Trip Event</h3>
     </div>
 </div>
 <br/>
-<div class="row text-center">
+<div class="row text-center city-<?php echo $event; ?>">
     <div class="span3">
 	Event Day/Time
     </div>
@@ -39,10 +38,9 @@
     <br/>
     <div class="row text-center">
         <div class="span12">
-            <input type="submit" value="Finished" class="btn btn-success" />
+            <input type="submit" value="Next >>" class="btn btn-success" />
         </div>
     </div>
 </div>
 <script type="text/javascript" src="js/trip.js"></script>
 <?php include('master/footer.php'); ?>
-

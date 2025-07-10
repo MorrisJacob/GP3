@@ -7,7 +7,10 @@ include('php/pages/create-account.php');
 	<form action="create-account.php" method="POST" class="form-horizontal">
         <input type="hidden" name="redirect" value="<?php echo $redirect; ?>" />
         <input type="hidden" name="event" value="<?php echo $event; ?>" />
-		<h4>Your personal information</h4>
+	<div class="row text-center">
+		<h4>Your information</h4>
+		<p>This information is private and confidential. We do not sell, share, or distribute your data to third parties.</p>
+	</div>
 		<div class="col-xs-12" style="font-size:16px;font-weight:bold;">
 				<?php if(isset($error)){ echo $error; } ?>
 		</div>
@@ -23,12 +26,6 @@ include('php/pages/create-account.php');
 			  <input type="text" name="lastname" class="required" id="inputLnam" placeholder="Last Name" required="required">
 			</div>
 		 </div>
-		 		<div class="control-group">
-			<label class="control-label" for="phone">Phone Number <sup>*</sup></label>
-			<div class="controls">
-			  <input type="text" name="phone" id="phone" placeholder="phone" class="required" required="required"/>
-			</div>
-		</div>
 		
 		<div class="control-group">
 		<label class="control-label" for="email">Email <sup>*</sup></label>
@@ -42,10 +39,16 @@ include('php/pages/create-account.php');
 		  <input type="password" name="password" class="required" id="inputPassword1" placeholder="Password" required="required" pattern=".{6,}"  title="6 characters minimum">
 		</div>
 	  </div>	
-				<div class="control-group">
-			<label class="control-label" for="company">Company</label>
+		<div class="control-group">
+			<label class="control-label" for="phone">Phone Number</label>
 			<div class="controls">
-			  <input type="text" name="company" id="company" placeholder="company"/>
+			  <input type="text" name="phone" id="phone" placeholder="phone"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="company">Team Name</label>
+			<div class="controls">
+			  <input type="text" name="company" id="company" placeholder="Team Name"/>
 			</div>
 		</div>  
 	<p><sup>*</sup> Required field	</p>

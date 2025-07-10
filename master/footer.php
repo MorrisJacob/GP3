@@ -1,11 +1,10 @@
 <footer>
   <div class="container">
-             <div class="row">
+             <div class="row" style="text-align:center;">
             <article class="span6 fright">
              <ul class="menu-footer">
-               <li class="current"><a href="index.html">Home</a></li>
+               <li><a href="index.php">Home</a></li>
                <li><a href="cart.php">My Carts</a></li>
-               <li><a href="cart-history.php">Cart History</a></li>
                <li><a href="city-info.php">City Info</a></li>
                <li><a href="my-account.php">My Account</a></li>
                <li><a href="contact.php">Contact Us</a></li>

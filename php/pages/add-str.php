@@ -8,30 +8,38 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $phone = GetSafeString($_POST['phone']);
     $name = GetSafeString($_POST['name']);
     $address = GetSafeString($_POST['address']);
+    $occupancy = GetSafeString($_POST['occupancy']);
+    $numberOfRooms = GetSafeString($_POST['numberOfRooms']);
     $url = GetSafeString($_POST['url']);
 
     if(is_null($id) || $id == "" || $id <= 0){
         //new Short-Term Rental
 
-        ExecuteSQL("INSERT INTO ShortTermRentals (latitude, longitude, phone, name, address, url) " . 
+        ExecuteSQL("INSERT INTO ShortTermRentals (latitude, longitude, phone, name, address, url, occupancy, RoomCount) " . 
         "VALUES (" .
         $latitude . ", " .
         $longitude . ", " .
         "'" . $phone . "', " .
         "'" . $name . "', " .
         "'" . $address . "', " .
-        "'" . $url . "');");
+        "'" . $url . "', " . 
+        $occupancy . ", " .
+        $numberOfRooms . ");");
 
     }else{
         //update existing
 
-        ExecuteSQL("UPDATE ShortTermRentals SET latitude = '" . $latitude . "'," . 
+        $updatesql = "UPDATE ShortTermRentals SET latitude = '" . $latitude . "'," . 
         "longitude = '" . $longitude . "', " .
         "phone = '" . $phone . "', " .
         "name = '" . $name . "', " .
         "address = '" . $address . "', " .
-        "url = '" . $url . "' " .
-        "WHERE id = " . $id . ";");
+        "url = '" . $url . "', " .
+        "occupancy = " . $occupancy . ", " .
+        "RoomCount = " . $numberOfRooms . " " .
+        "WHERE id = " . $id . ";";
+
+        ExecuteSQL($updatesql);
     }
 
     echo "<script>location='short-term-rentals.php'</script>"; /* Redirect browser */
@@ -43,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         $id = GetSafeString($_GET['id']);
         if(!is_null($id) && $id != "" && $id > 0){
-            $strInfo = ExecuteSQL("SELECT latitude, longitude, phone, name, address, url FROM ShortTermRentals WHERE id = " . $id . ";");
+            $strInfo = ExecuteSQL("SELECT latitude, longitude, phone, name, address, url, occupancy, RoomCount FROM ShortTermRentals WHERE id = " . $id . ";");
 
 
             if ($strInfo->num_rows > 0) {
@@ -56,6 +64,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $name = $row["name"];
                 $address = $row["address"];
                 $url = $row["url"];
+                $occupancy = $row["occupancy"];
+                $numberOfRooms = $row["RoomCount"];
 
                 }
             }

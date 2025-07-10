@@ -33,7 +33,7 @@ include('php/pages/my-account.php');
 		        </div>
 		        <div class="row row-marg">
 				<div class="span12">
-				    Company:
+				    Team Name:
 				</div>
 				<div class="span12">
 				    <input type="text" class="form-control" name="Company" value="<?php echo $company; ?>" />

@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     //Add all new activities
     CreateItinerary($trip, $itineraryTitles, $itineraryAddresses, $types, $itineraryLatitudes, $itineraryLongitudes, $itineraryCities, $itineraryLodge, $itineraryEvent, $day);
 
-    echo '<script type="text/javascript">window.location = "activities.php?event=' . $event . '&day=' . $day . '";</script>   ';
+    echo '<script type="text/javascript">window.location = "city.php?event=' . $event . '&day=' . $day . '";</script>   ';
 } else {
 
     $event = GetSafeString($_GET['event']);
@@ -76,7 +76,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <input type="hidden" name="itineraryLodge[]" value="{$row['LodgeDistance']}" />
                             <input type="hidden" name="itineraryEvent[]" value="{$row['EventDistance']}" />
                             <input type="hidden" name="city[]" value="{$row['City']}" />
-                            <input type="hidden" name="types[]" value="{$row['ActivityType']}" />
                         </div>
                         <div class="span2">
                             <span class="visible-xs mobile-title">To Event: </span>{$row["EventDistance"]}

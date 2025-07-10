@@ -51,7 +51,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $trip = CreateTrip($userid, $event);
             ConvertEvents($trip);
             ConvertActivities($trip);
-            //TODO: Insert Trip, TripEvents, TripActivities
         }
 
         //If they wanted a redirect, redirect them

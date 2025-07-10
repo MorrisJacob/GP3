@@ -6,6 +6,35 @@
 
 
 /*------ template stylization ------*/
+
+.require-check {
+    width: 100%;
+}
+input[type="radio"] {
+  margin-top: -1px;
+  vertical-align: middle;
+}
+
+.inline-label {
+    display: inline-block;
+    font-size: 20px;
+    margin: 10px;
+}
+.address-link {
+    text-decoration: underline;
+}
+.mobile-title {
+    font-weight: bold;
+}
+.collapse {
+    position: fixed;
+    right: 10px;
+    z-index: 100;
+}
+
+.itinerary-row {
+    margin: 10px 0;
+}
 .pill-container {
   display: flex;
   flex-wrap: wrap;
@@ -14,6 +43,14 @@
 }
 .pill-container .badge {
   cursor: pointer;
+}
+.event-item {
+    font-size: 15px;
+    margin:0 10px;
+}
+.event-item.active{
+    text-decoration: underline;
+    font-weight: bold;
 }
 .trip-item {
     font-size: 20px;
@@ -46,6 +83,7 @@ body {
 .navbar-item {
     margin: 5px 0;
     font-size: 15px;
+    color: white;
 }
 
 .navbar-collapse.in {
@@ -88,7 +126,9 @@ body {
 }
  
 .navbar-dark .navbar-toggler {
+    z-index:101;
     position:fixed;
+    right: 40px;
     top: 60px;
     border-color: lightgray;
     background-color: #b5b4a0;
@@ -606,8 +646,9 @@ header {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
-  background: #2a2a2a !important;
-  border-bottom: 5px solid #2a2a2a !important;
+  background: lightgray !important;
+  border-bottom: 5px solid gray !important;
+  /*border-bottom: 5px solid #2a2a2a !important;*/
 }
 /*hover for second level*/
 .nav-collapse_ .nav > li > ul li > a:hover,
@@ -1289,13 +1330,25 @@ footer a:hover {
     font-size: 22px;
   }
 }
+@media (min-width: 768px) {
+  .visible-xs {
+      display: none;
+  }
+}
 @media (max-width: 767px) {
+  .hidden-xs {
+      display: none !important;
+  }
+  .itinerary-row, .gametime-row, .activity-row {
+      border: 1px solid;
+  }
+  .gametime-row, .activity-row {
+      margin: 5px;
+      padding: 5px;
+  }
   header {
     padding-bottom: 20px;
     position: static;
-  }
-  .navbar_ .nav-collapse_ .nav {
-    display: none;
   }
   .nav-collapse_ {
     height: auto !important;
@@ -1335,6 +1388,7 @@ footer a:hover {
     margin-top: 5px;
   }
   .menu-footer {
+    display:inline-block;
     float: none;
     margin: 0 0 20px -6px;
   }
@@ -1538,7 +1592,10 @@ footer a:hover {
 .column-header {
     text-decoration: underline;
 }
-.city-selected {
+.day, .city-loc {
+    cursor: pointer;
+}
+.city-selected, .day-selected {
     text-decoration: underline;
     font-weight: bold;
 }
@@ -1548,8 +1605,10 @@ footer a:hover {
 }
 
 .user-img{
+    z-index:101;
     width: 30px;
     position: fixed;
+    right: 100px;
     top: 60px;
     margin-left: -40px;
     cursor: pointer;
@@ -1574,6 +1633,9 @@ footer a:hover {
 }
 
 @media (max-width: 767px) {
+  #savesend {
+      margin-top: 10px;
+  }
   #listing {
     width:100%;
   }
@@ -1582,6 +1644,10 @@ footer a:hover {
   }
   .gm-style-iw-c{
     max-width: inherit !important;
+  }
+
+  .mobile-margin{
+    margin: 10px 0;
   }
 }
 
@@ -1594,6 +1660,9 @@ footer a:hover {
 }
 /* end itinerary map*/
 
+.cart-title{
+    color: black !important;
+}
 
 /*------ city colors ------ */
 
@@ -1612,3 +1681,188 @@ footer a:hover {
 .city-fishers, .city-fishers * {
     color: red !important;
 }
+
+.city-sheridan, .city-sheridan * {
+    color: black !important;
+}
+
+.city-indianapolis, .city-indianapolis * {
+    color: purple !important;
+}
+
+.custom-required{
+    border-color: #E74C3C;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+}
+
+.much-button{
+    border: 1px solid transparent;
+    border-radius: 20px;
+    width: 130px;
+    height: 50px;
+    line-height: 50px;
+    margin-top: 70px;
+    margin-left: 30%;
+    color: white !important;
+    background-color: gray;
+}
+
+.background-carmel {
+    background-color: blue !important;
+}
+
+.background-westfield {
+    background-color: green !important;
+}
+
+.background-noblesville {
+    background-color: yellow !important;
+}
+
+.background-fishers {
+    background-color: red !important;
+}
+
+.background-sheridan {
+    background-color: lightgray !important;
+}
+
+.background-indianapolis {
+    background-color: purple !important;
+}
+
+
+.fade-it {
+  padding: 15px;
+  text-align: center;
+}
+@-webkit-keyframes yellow-fade {
+  from {
+    background: yellow;
+  }
+  to {
+    background: inherit;
+  }
+}
+@-moz-keyframes yellow-fade {
+  from {
+    background: yellow;
+  }
+  to {
+    background: inherit;
+  }
+}
+@keyframes yellow-fade {
+  from {
+    background: yellow;
+  }
+  to {
+    background: inherit;
+  }
+}
+
+.fade-it {
+  -webkit-animation: yellow-fade 1s ease-in-out 0s 2;
+  -moz-animation: yellow-fade 1s ease-in-out 0s 2;
+  -o-animation: yellow-fade 1s ease-in-out 0s 2;
+  animation: yellow-fade 1s ease-in-out 0s 2;
+}
+
+.gm-style-iw-c {
+    max-height: 255px !important;
+}
+
+.itinerary-title {
+    color: white;
+}
+
+.step-wizard {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .step {
+      position: relative;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .step::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 100%;
+      height: 4px;
+      background-color: #ccc;
+      z-index: 0;
+    }
+
+    .step.completed:not(:last-child)::after {
+      background-color: white;
+    }
+
+    .pill {
+      cursor: pointer;
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      border-radius: 50px;
+      background-color: #ccc;
+      color: white;
+      font-weight: bold;
+      z-index: 1;
+      white-space: nowrap;
+      transition: background-color 2s ease;
+    }
+
+    .step.completed .pill {
+      background-color: lightgray;
+      color: black;
+    }
+
+    .step.future .pill {
+      background-color: #bbb;
+    }
+
+    .step.active .pill {
+  animation: activateStep 2.5s forwards;
+  animation-iteration-count: 2;
+}
+
+@keyframes activateStep {
+  0% {
+    background-color: #bbb;
+    box-shadow: none;
+  }
+  25% {
+    background-color: black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    background-color: #bbb;
+    box-shadow: none;
+  }
+  75% {
+    background-color: black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  100% {
+    background-color: black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+}
+
+    @media (max-width: 600px) {
+      .step-wizard {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .step::after {
+        display: none;
+      }
+    }
