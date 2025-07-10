@@ -1,8 +1,6 @@
 <?php
 
 function SendText($to_number, $message){
-    $account_sid = 'AC4f4e5a3cf53caa1f2842c2d377777804';
-    $auth_token  = '8b03c3f1317f30426875bcde7aa619e0';
     $from_number = '8446482390'; // Your Twilio number
     $to_number   = '7654616017'; // The recipient
     $message     = 'Grand Park Rentals!';
